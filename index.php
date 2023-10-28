@@ -2,14 +2,13 @@
 include('config.php');
 include('connexion.php');
 
-$query = "UPDATE users SET login=:login where id=:id";
+$query = "DELETE FROM users where id=:id";
 $stmt =  $pdo->prepare($query);
 
 $id=3;
 $login ='USER04';
 
 //Liaison des valeurs avec les paramètres
-$stmt->bindParam(':login', $login);
 $stmt->bindParam(':id', $id);
 
 //Execution de la requête
