@@ -2,15 +2,15 @@
 include('config.php');
 include('connexion.php');
 
-$query = "INSERT INTO users (login,password) VALUES (:login, :password)";
+$query = "UPDATE users SET login=:login where id=:id";
 $stmt =  $pdo->prepare($query);
 
-$login ='user04';
-$password='user04';
+$id=3;
+$login ='USER04';
 
 //Liaison des valeurs avec les paramètres
 $stmt->bindParam(':login', $login);
-$stmt->bindParam(':password', $password);
+$stmt->bindParam(':id', $id);
 
 //Execution de la requête
 $stmt->execute();
