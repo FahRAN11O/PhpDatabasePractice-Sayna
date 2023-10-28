@@ -6,7 +6,8 @@ $query = 'SELECT * FROM users';
 $stmt = $pdo->query($query);
 
 //récupérer les resultats
+echo '<table>';
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	//Utiliser les données récupérées
-	echo $row('login');
+	echo $row['login'];
 }
